@@ -1,0 +1,91 @@
+/* High contrast mode */
+.high-contrast {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 0%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 210 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 80%;
+  --accent: 0 0% 20%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 40%;
+  --input: 0 0% 40%;
+  --ring: 210 100% 50%;
+}
+
+.high-contrast * {
+  border-color: var(--border);
+}
+
+.high-contrast a {
+  text-decoration: underline;
+}
+
+.high-contrast button:focus,
+.high-contrast a:focus,
+.high-contrast input:focus,
+.high-contrast select:focus,
+.high-contrast textarea:focus {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Remove cursor styling from the .reduced-motion section */
+
+/* Reduced motion */
+.reduced-motion * {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Remove custom cursor styles */
+html {
+  --cursor-scale: 1;
+}
+
+/* Remove these cursor rules entirely */
+@media (pointer: fine) {
+  html:not(.reduced-motion) {
+    cursor: default;
+  }
+
+  button:hover:not(.reduced-motion),
+  a:hover:not(.reduced-motion) {
+    cursor: pointer;
+  }
+}
+
+/* Skip to content link for keyboard users */
+.skip-to-content {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: 9999;
+  padding: 1rem;
+  background-color: var(--background);
+  color: var(--foreground);
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+  left: 1rem;
+}
+
+/* Focus visible utility */
+.focus-visible:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
