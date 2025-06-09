@@ -86,7 +86,7 @@ export async function sendContactEmail({
     const { data, error } = await resend.emails.send({
       from: "WallScape.io <onboarding@resend.dev>",
       // to: ["silverstring@gmail.com"], // The recipient of contact form submissions
-      to: ["wesleyleck2@gmail.com"], // The recipient of contact form submissions
+      to: ["wesleyleck92@outlook.com"], // The recipient of contact form submissions
       subject: `New Contact Form Submission from ${name || email}`,
       reply_to: email,
       html: htmlContent,
