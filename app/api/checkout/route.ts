@@ -67,7 +67,8 @@ export async function POST(request: Request) {
     if (subscriptionError && subscriptionError.code !== "PGRST116") {
       console.error("Error fetching subscription:", subscriptionError)
     }
-
+    console.log(subscription);
+    console.log(`Existing subscription for user ${userId}`);
     let customerId = subscription?.stripe_customer_id
 
     // Create a new customer if one doesn't exist
@@ -77,6 +78,8 @@ export async function POST(request: Request) {
         email: userEmail,
         metadata: { userId },
       })
+      console.log('**************************** here is created customer ***********************');
+      console.log(customer);
       customerId = customer.id
     } else {
       console.log(`Using existing Stripe customer: ${customerId}`)
