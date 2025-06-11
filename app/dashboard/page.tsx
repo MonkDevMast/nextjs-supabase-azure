@@ -33,7 +33,7 @@ export default async function DashboardPage() {
   // Fetch user profile
   const { data: profile, error } = await supabase.from("profiles").select("*").eq("id", userId).single();
   console.log(profile)
-  // console.log(profiles);
+
   console.log(error)
   // Fetch user's wallpapers
   const { data: wallpapers } = await supabase
