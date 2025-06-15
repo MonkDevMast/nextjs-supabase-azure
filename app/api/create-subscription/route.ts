@@ -150,7 +150,7 @@ async function createOrUpdateUsageRecord(userId: string, planType: string, supab
       const { error: updateError } = await supabase
         .from("usage")
         .update({
-          monthly_generation: maxGenerations,
+          monthly_generations: maxGenerations,
           updated_at: now.toISOString(),
         })
         .eq("user_id", userId)
@@ -162,7 +162,7 @@ async function createOrUpdateUsageRecord(userId: string, planType: string, supab
       // Create new usage record
       const { error: insertError } = await supabase.from("usage").insert({
         user_id: userId,
-        monthly_generation: maxGenerations,
+        monthly_generations: maxGenerations,
         count: 0,
         total_generations: 0,
         reset_date: periodEnd.toISOString(),
