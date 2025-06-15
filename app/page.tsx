@@ -7,7 +7,6 @@ export const metadata = {
 }
 
 // Make sure this file isn't causing any redirects
-
 // If there's any client-side code here that might be redirecting based on auth state,
 // we need to modify it. If it's just a simple server component, we can leave it as is.
 
