@@ -118,7 +118,7 @@ export interface Database {
         Row: {
           id: string
           user_id: string
-          monthly_generations: number
+          monthly_generation: number
           count: number
           total_generations: number
           reset_date: string | null
@@ -128,7 +128,7 @@ export interface Database {
         Insert: {
           id?: string
           user_id: string
-          monthly_generations?: number
+          monthly_generation?: number
           count: number
           total_generations?: number
           reset_date?: string | null
@@ -138,7 +138,7 @@ export interface Database {
         Update: {
           id?: string
           user_id?: string
-          monthly_generations?: number
+          monthly_generation?: number
           count?: number
           total_generations?: number
           reset_date?: string | null

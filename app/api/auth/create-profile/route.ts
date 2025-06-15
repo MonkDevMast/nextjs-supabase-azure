@@ -68,7 +68,7 @@ export async function POST(request: Request) {
     try {
       const { error: usageError } = await supabase.from("usage").insert({
         user_id: userId,
-        monthly_generations: 0,
+        monthly_generation: 0,
         count: 0,
         total_generations: 0,
         reset_date: new Date().toISOString(),

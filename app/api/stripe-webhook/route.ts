@@ -701,7 +701,7 @@ async function updateUserUsageLimits(userId: string, planType: string, supabase:
       const { error: updateError } = await supabase
         .from("usage")
         .update({
-          monthly_generations: maxGenerations,
+          monthly_generation: maxGenerations,
           updated_at: now.toISOString(),
         })
         .eq("user_id", userId)
@@ -715,7 +715,7 @@ async function updateUserUsageLimits(userId: string, planType: string, supabase:
       // Create new usage record
       const { error: insertError } = await supabase.from("usage").insert({
         user_id: userId,
-        monthly_generations: maxGenerations,
+        monthly_generation: maxGenerations,
         count: 0,
         total_generations: 0,
         reset_date: periodEnd.toISOString(),

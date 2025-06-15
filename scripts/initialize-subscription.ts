@@ -47,7 +47,7 @@ async function initializeSubscription(userId: string) {
     // Create usage record
     const { error: usageError } = await supabase.from("usage").insert({
       user_id: userId,
-      monthly_generations: 5, // Free plan
+      monthly_generation: 5, // Free plan
       count: 0,
       total_generations: 0,
       reset_date: periodEnd.toISOString(),

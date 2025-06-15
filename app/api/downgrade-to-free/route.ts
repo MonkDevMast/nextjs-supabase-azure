@@ -123,7 +123,7 @@ export async function POST(req: Request) {
         const { error: updateError } = await adminSupabase
           .from("usage")
           .update({
-            monthly_generations: 5, // Free plan limit
+            monthly_generation: 5, // Free plan limit
             updated_at: now.toISOString(),
           })
           .eq("user_id", userId)
@@ -137,7 +137,7 @@ export async function POST(req: Request) {
         // Create new usage record
         const { error: insertError } = await adminSupabase.from("usage").insert({
           user_id: userId,
-          monthly_generations: 5, // Free plan limit
+          monthly_generation: 5, // Free plan limit
           count: 0,
           total_generations: 0,
           reset_date: periodEnd.toISOString(),
