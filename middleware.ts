@@ -45,6 +45,7 @@ export async function middleware(request: NextRequest) {
     ) {
       return response
     }
+
     // Create a Supabase client for authentication checks
     const supabase = createServerClient<Database>(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,

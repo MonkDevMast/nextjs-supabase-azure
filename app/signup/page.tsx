@@ -71,19 +71,6 @@ export default function SignupPage() {
 
       // Use the most basic form of signUp - no metadata, no options
       console.log("Calling supabase.auth.signUp with email:", email)
-      await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          data: {
-            full_name: name,
-          },
-        },
-      }).then((data) => {
-        console.log(data)
-      }).catch((error) => {
-        console.error('Signup error:', error.message);
-      });
       const { data, error } = await supabase.auth.signUp({
         email,
         password,

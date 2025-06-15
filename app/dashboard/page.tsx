@@ -27,14 +27,11 @@ export default async function DashboardPage() {
   }
 
   const userId = session.user.id
-  console.log(`************************* here is profile user id ******************* ${userId}`);
-  // const profiles = await supabase.from('profiles').select('*');
+  console.log(userId)
 
   // Fetch user profile
-  const { data: profile, error } = await supabase.from("profiles").select("*").eq("id", userId).single();
+  const { data: profile } = await supabase.from("profiles").select("*").eq("id", userId).single()
   console.log(profile)
-
-  console.log(error)
   // Fetch user's wallpapers
   const { data: wallpapers } = await supabase
     .from("wallpapers")
